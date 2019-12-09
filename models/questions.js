@@ -5,5 +5,5 @@ mongoose.connect("mongodb+srv://gamesforenglish:gamesforenglishnotcontain@cluste
 });
 
 let Schema = mongoose.Schema;
-let Questions = mongoose.model('Questions', new Schema({questions:[], created_at: {type: Date, default: new Date()}}));
+let Questions = mongoose.model('Questions', new Schema({questions:[], created_at: {type: Date, default: () => {return new Date()} }}));
 module.exports = Questions;
